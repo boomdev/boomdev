@@ -1,0 +1,20 @@
+---
+import type { Value } from '../data/values';
+
+interface Props {
+  items: Value[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="value-list">
+  {
+    items.map((item) => (
+      <li class="value-list__item">
+        <h3 class="value-list__title">{item.title}</h3>
+        <p class="value-list__description">{item.description}</p>
+      </li>
+    ))
+  }
+</ul>

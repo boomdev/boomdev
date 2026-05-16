@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-16T00:00:00.000Z",
+  "title": "Design System: Boomdev",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ink",
+        "canonical": "oklch(28% 0.02 240)",
+        "tonalRamp": [
+          "oklch(15% 0.02 240)",
+          "oklch(22% 0.02 240)",
+          "oklch(28% 0.02 240)",
+          "oklch(38% 0.02 240)",
+          "oklch(48% 0.02 240)",
+          "oklch(58% 0.02 240)",
+          "oklch(72% 0.015 240)",
+          "oklch(94% 0.01 240)"
+        ]
+      },
+      "sea-glass": {
+        "role": "primary",
+        "displayName": "Sea-Glass Teal",
+        "canonical": "oklch(48% 0.06 210)",
+        "tonalRamp": [
+          "oklch(22% 0.05 210)",
+          "oklch(30% 0.055 210)",
+          "oklch(38% 0.055 210)",
+          "oklch(48% 0.06 210)",
+          "oklch(58% 0.045 210)",
+          "oklch(72% 0.04 210)",
+          "oklch(88% 0.03 210)",
+          "oklch(96% 0.02 210)"
+        ]
+      },
+      "clay": {
+        "role": "secondary",
+        "displayName": "Dusty Clay",
+        "canonical": "oklch(62% 0.06 55)",
+        "tonalRamp": [
+          "oklch(28% 0.05 55)",
+          "oklch(38% 0.055 55)",
+          "oklch(48% 0.055 55)",
+          "oklch(58% 0.06 55)",
+          "oklch(62% 0.06 55)",
+          "oklch(72% 0.06 55)",
+          "oklch(85% 0.04 55)",
+          "oklch(94% 0.03 55)"
+        ]
+      },
+      "linen": {
+        "role": "neutral",
+        "displayName": "Linen Ground",
+        "canonical": "oklch(98% 0.008 85)",
+        "tonalRamp": [
+          "oklch(18% 0.02 240)",
+          "oklch(24% 0.025 235)",
+          "oklch(32% 0.025 235)",
+          "oklch(48% 0.025 220)",
+          "oklch(72% 0.025 220)",
+          "oklch(88% 0.015 80)",
+          "oklch(95.5% 0.012 80)",
+          "oklch(98% 0.008 85)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero H1 only; balanced line breaks."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2 with sea-glass marker bar."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose, descriptions, UI copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges, tags, tagline, caption."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-sm",
+        "value": "0 1px 2px oklch(28% 0.02 240 / 0.06)",
+        "purpose": "Resting cards and subtle separation."
+      },
+      {
+        "name": "shadow-card-hover",
+        "value": "0 10px 28px oklch(38% 0.06 210 / 0.22)",
+        "purpose": "Project card hover on pointer devices only."
+      },
+      {
+        "name": "shadow-primary",
+        "value": "0 2px 8px oklch(38% 0.06 210 / 0.22)",
+        "purpose": "Primary button resting glow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Default transition easing for color, border, shadow, transform."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA; one per hero, full-width on narrow viewports.",
+      "html": "<a href=\"#projects\" class=\"ds-btn-primary\">View projects</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.7rem 1.4rem; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; text-decoration: none; border-radius: 999px; border: 2px solid transparent; background: oklch(48% 0.06 210); color: oklch(97% 0.02 210); box-shadow: 0 2px 8px oklch(38% 0.06 210 / 0.22); transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s cubic-bezier(0.25, 1, 0.5, 1), background 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-primary:hover { background: oklch(38% 0.055 210); box-shadow: 0 4px 12px oklch(38% 0.06 210 / 0.22); transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid oklch(62% 0.06 55); outline-offset: 2px; background: oklch(38% 0.055 210); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary actions; surface fill with clay hover accent.",
+      "html": "<a href=\"#contact\" class=\"ds-btn-secondary\">Contact</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.7rem 1.4rem; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; text-decoration: none; border-radius: 999px; border: 2px solid oklch(88% 0.015 80); background: oklch(99.5% 0.006 85); color: oklch(28% 0.02 240); transition: border-color 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s cubic-bezier(0.25, 1, 0.5, 1), background 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-secondary:hover { border-color: oklch(62% 0.06 55); color: oklch(48% 0.055 55); background: color-mix(in srgb, oklch(62% 0.06 55) 8%, oklch(99.5% 0.006 85)); } .ds-btn-secondary:focus-visible { outline: 2px solid oklch(62% 0.06 55); outline-offset: 2px; }"
+    },
+    {
+      "name": "Header Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Pill nav item in sticky header and footer.",
+      "html": "<a href=\"/#projects\" class=\"ds-nav-link\">Projects</a>",
+      "css": ".ds-nav-link { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0.5em 1em; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; text-decoration: none; color: oklch(48% 0.025 220); border-radius: 999px; transition: background 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: oklch(28% 0.02 240); background: oklch(95.5% 0.012 80); outline: 2px solid oklch(62% 0.06 55); outline-offset: 2px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Linked project tile in the directory grid.",
+      "html": "<a href=\"https://example.com\" class=\"ds-project-card\" target=\"_blank\" rel=\"noopener noreferrer\"><h3 class=\"ds-project-card__title\">Timesheeter <span aria-hidden=\"true\">↗</span></h3><p class=\"ds-project-card__desc\">A lightweight tool for tracking time.</p><div class=\"ds-project-card__meta\"><span class=\"ds-badge\">Product</span><span class=\"ds-tag\">Productivity</span></div></a>",
+      "css": ".ds-project-card { display: flex; flex-direction: column; gap: 0.75rem; height: 100%; min-width: 0; padding: 1.5rem; text-decoration: none; color: oklch(28% 0.02 240); background: oklch(99.5% 0.006 85); border: 1px solid oklch(88% 0.015 80); border-radius: 16px; box-shadow: 0 1px 2px oklch(28% 0.02 240 / 0.06); transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-project-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, oklch(48% 0.06 210) 35%, oklch(88% 0.015 80)); box-shadow: 0 10px 28px oklch(38% 0.06 210 / 0.22); } .ds-project-card:focus-visible { outline: 2px solid oklch(62% 0.06 55); outline-offset: 4px; } .ds-project-card__title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; margin: 0; } .ds-project-card__desc { font-size: 0.9375rem; line-height: 1.65; color: oklch(48% 0.025 220); margin: 0; flex: 1; } .ds-project-card__meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 0.75rem; } .ds-badge { font-size: 0.8125rem; font-weight: 600; padding: 0.25em 0.65em; border-radius: 999px; background: oklch(94% 0.03 210); color: oklch(38% 0.055 210); } .ds-tag { font-size: 0.8125rem; color: oklch(48% 0.025 220); }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "description": "H2 with sea-glass marker bar above.",
+      "html": "<h2 class=\"ds-section-title\">Projects</h2>",
+      "css": ".ds-section-title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: clamp(1.375rem, 2.5vw, 1.75rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.03em; margin: 0 0 1.5rem; color: oklch(28% 0.02 240); } .ds-section-title::before { content: ''; display: block; width: 2.25rem; height: 3px; border-radius: 999px; background: oklch(48% 0.06 210); margin-bottom: 1rem; }"
+    },
+    {
+      "name": "Value List Item",
+      "kind": "custom",
+      "description": "Principles list row; not a card.",
+      "html": "<li class=\"ds-value-item\"><h3 class=\"ds-value-title\">Practical over theatrical</h3><p class=\"ds-value-desc\">Useful software and clear execution over hype.</p></li>",
+      "css": ".ds-value-item { padding-bottom: 1.5rem; border-bottom: 1px solid oklch(88% 0.015 80); list-style: none; } .ds-value-title { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 1.25rem; font-weight: 600; margin: 0 0 0.5rem; color: oklch(28% 0.02 240); } .ds-value-desc { margin: 0; font-size: 0.9375rem; line-height: 1.65; color: oklch(48% 0.025 220); max-width: 58ch; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workshop Directory",
+    "overview": "A founder or collaborator scanning project links at midday on a bright desk. The UI reads like a well-kept index on a workbench: warm linen paper, sea-glass teal for wayfinding, dusty clay for secondary warmth. Motion is restrained; project cards are the only card grid; principles use a flat list.",
+    "keyCharacteristics": [
+      "Single-page index: hero, about, principles list, project directory, contact",
+      "OKLCH tokens in CSS; hex in frontmatter for Stitch export",
+      "Tally embed with dynamicHeight; no iframe scrollbar",
+      "prefers-color-scheme dark with recognizable accents",
+      "WCAG AA baseline"
+    ],
+    "rules": [
+      {
+        "name": "The OKLCH Source Rule",
+        "body": "All new color decisions are authored in OKLCH in CSS. Hex in DESIGN.md is for export compatibility only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Accent Rule",
+        "body": "Sea-glass and clay are the only accent hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Pure Black Rule",
+        "body": "Never use #000 or #fff. Tint neutrals toward warm linen or sea-glass.",
+        "section": "colors"
+      },
+      {
+        "name": "The 1.25 Scale Rule",
+        "body": "Type steps use a 1.25 ratio from caption through display.",
+        "section": "typography"
+      },
+      {
+        "name": "The One H1 Rule",
+        "body": "Exactly one H1 per page. Section titles are H2.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Glass Rule",
+        "body": "No decorative backdrop-filter stacks. Header is solid surface.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do author colors in OKLCH in global.css and keep neutrals warm-tinted.",
+      "Do use sea-glass for primary wayfinding and clay for focus/secondary warmth only.",
+      "Do keep copy plain and scannable; one H1; no em dashes in UI copy.",
+      "Do open external projects in a new tab with rel=\"noopener noreferrer\" and an accessible new-window cue.",
+      "Do honor prefers-reduced-motion.",
+      "Do use scroll-margin-top under the sticky header for in-page anchors.",
+      "Do validate Tally and project URLs at build time."
+    ],
+    "donts": [
+      "Don't use gradient text on headlines or the logo.",
+      "Don't build toward a VC-backed SaaS homepage: purple gradients, hero metrics, interchangeable product UI marketing.",
+      "Don't mimic a fake agency or corporate site: invented scale, stock authority.",
+      "Don't ship AI hype page aesthetics: glass cards, template icon+title+blurb grids on every section.",
+      "Don't use side-stripe borders on cards or lists.",
+      "Don't use pure #000 / #fff neutrals.",
+      "Don't use bounce or elastic easing.",
+      "Don't add decorative hero blobs or page-wide radial gradients without explicit purpose."
+    ]
+  }
+}

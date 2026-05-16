@@ -7,7 +7,11 @@ const navItems = [
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="site-logo">Boomdev</a>
+    <a href="/" class="site-logo" aria-label="Boomdev, home">
+      <span class="site-logo__mark" aria-hidden="true"></span>
+      <span class="site-logo__text">Boom<span class="site-logo__accent">dev</span></span>
+      <span class="site-logo__tagline">Independent software lab</span>
+    </a>
     <nav aria-label="Main">
       <ul class="site-nav">
         {

@@ -7,12 +7,26 @@ export type ProjectStatus =
   | 'AI project'
   | 'Home base';
 
+import { isSafeHttpUrl } from '../utils/url';
+
 export interface Project {
   name: string;
   url?: string;
   status: ProjectStatus;
   category: string;
   description: string;
+}
+
+function assertValidProject(project: Project): void {
+  if (!project.name.trim()) {
+    throw new Error('Project name is required.');
+  }
+  if (!project.description.trim()) {
+    throw new Error(`Project "${project.name}" needs a description.`);
+  }
+  if (project.url && !isSafeHttpUrl(project.url)) {
+    throw new Error(`Invalid URL for project "${project.name}": ${project.url}`);
+  }
 }
 
 export const projects: Project[] = [
@@ -93,6 +107,10 @@ export const projects: Project[] = [
     status: 'AI project',
     category: 'AI / software',
     description:
-      'An AI-oriented software initiative. Keep the public description intentionally concise until the project positioning is finalized.',
+      'A tool to help humans meet long term financial goals, ideally financial independence.',
   },
 ];
+
+for (const project of projects) {
+  assertValidProject(project);
+}

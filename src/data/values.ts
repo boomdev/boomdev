@@ -6,28 +6,18 @@ export interface Value {
 export const values: Value[] = [
   {
     title: 'Practical over theatrical',
-    description: 'We prefer useful software and clear execution over hype.',
+    description: 'Useful software and clear execution over hype.',
   },
   {
-    title: 'Small teams, focused products',
-    description: 'We believe small teams can build meaningful tools when scope is clear.',
+    title: 'Small teams, focused scope',
+    description: 'Meaningful tools when the problem and ownership stay clear.',
   },
   {
-    title: 'AI as leverage, not magic',
-    description: 'AI is useful when it improves workflows, context, decisions, or execution.',
+    title: 'AI as leverage',
+    description: 'Useful when it improves workflows, context, or decisions.',
   },
   {
     title: 'Build, test, learn',
-    description:
-      'Projects should move from idea to prototype quickly, then improve through real feedback.',
-  },
-  {
-    title: 'Clear ownership',
-    description: 'Good software needs strong product thinking, not only technical implementation.',
-  },
-  {
-    title: 'Long-term usefulness',
-    description:
-      'We prefer projects that can keep delivering value after the initial novelty fades.',
+    description: 'Prototype quickly, then improve with real feedback.',
   },
 ];

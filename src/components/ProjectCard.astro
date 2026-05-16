@@ -1,5 +1,6 @@
 ---
 import type { ProjectStatus } from '../data/projects';
+import { normalizeExternalUrl } from '../utils/url';
 
 interface Props {
   name: string;
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { name, url, status, category, description } = Astro.props;
+const safeUrl = normalizeExternalUrl(url);
 
 const statusClassMap: Record<ProjectStatus, string> = {
   Product: 'badge--product',
@@ -25,14 +27,18 @@ const badgeClass = statusClassMap[status] ?? 'badge--home';
 ---
 
 {
-  url ? (
+  safeUrl ? (
     <a
-      href={url}
-      class="card card--link"
+      href={safeUrl}
+      class="card card--link card--project"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <h3 class="card__title">{name}</h3>
+      <h3 class="card__title">
+        {name}
+        <span class="card__external" aria-hidden="true">↗</span>
+        <span class="sr-only"> (opens in new tab)</span>
+      </h3>
       <p class="card__description">{description}</p>
       <div class="card__meta">
         <span class:list={['badge', badgeClass]}>{status}</span>

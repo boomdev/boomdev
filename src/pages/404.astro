@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found | Boomdev"
+  description="This page does not exist. Return to the Boomdev project index."
+  canonical="https://boomdev.com/404/"
+>
+  <section class="section not-found" aria-labelledby="not-found-heading">
+    <div class="container">
+      <h1 id="not-found-heading" class="section__title">Page not found</h1>
+      <p class="not-found__lead">
+        The link may be outdated, or the page may have moved. The project index is on the home page.
+      </p>
+      <p class="not-found__actions">
+        <a href="/" class="btn btn--primary">Back to home</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
