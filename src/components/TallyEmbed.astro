@@ -1,0 +1,26 @@
+---
+const tallyUrl = import.meta.env.PUBLIC_TALLY_EMBED_URL;
+---
+
+<!-- TODO: set PUBLIC_TALLY_EMBED_URL in .env or Cloudflare Pages environment variables -->
+{
+  tallyUrl ? (
+    <div class="tally-wrapper">
+      <iframe
+        class="tally-embed"
+        src={tallyUrl}
+        title="Contact form"
+        loading="lazy"
+        width="100%"
+        height="500"
+      />
+    </div>
+  ) : (
+    <div class="tally-placeholder" role="status">
+      <p>Contact form will appear here once configured.</p>
+      <p style="font-size: 0.875rem; margin-top: 0.5rem;">
+        Set <code>PUBLIC_TALLY_EMBED_URL</code> to your Tally embed URL.
+      </p>
+    </div>
+  )
+}

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ValueCard from '../components/ValueCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import TallyEmbed from '../components/TallyEmbed.astro';
+import { values } from '../data/values';
+import { projects } from '../data/projects';
+---
+
+<BaseLayout
+  title="Boomdev | Independent software projects and AI experiments"
+  description="Boomdev is a small home for independent software initiatives, practical tools, AI experiments, and business software projects."
+  canonical="https://boomdev.com/"
+>
+  <section class="hero container" aria-labelledby="hero-heading">
+    <h1 id="hero-heading" class="hero__title">
+      Practical software projects, built independently.
+    </h1>
+    <p class="hero__subtitle">
+      Boomdev is a small home for independent software projects, AI experiments, utilities,
+      content sites, and practical tools built around focused ideas.
+    </p>
+    <div class="hero__actions">
+      <a href="#projects" class="btn btn--primary">View projects</a>
+      <a href="#contact" class="btn btn--secondary">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="section container" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="section__title">What is Boomdev?</h2>
+    <div class="prose">
+      <p>
+        Boomdev groups a set of independent initiatives across software, AI, productivity,
+        content, and business experiments. Some projects are live products, some are prototypes,
+        and some are public research notes.
+      </p>
+      <p>
+        This is an umbrella, not a single company with one product line. Each initiative can
+        have its own site, status, and direction. Boomdev exists to make that work easier to
+        understand and navigate.
+      </p>
+      <p>
+        The goal is not to create artificial scale, but to offer a credible home base: a practical
+        software lab where people can discover what exists and how the pieces connect.
+      </p>
+    </motion.div>
+  </section>
+
+  <section class="section container" aria-labelledby="values-heading">
+    <h2 id="values-heading" class="section__title">What we stand for</h2>
+    <div class="card-grid card-grid--values">
+      {values.map((value) => <ValueCard title={value.title} description={value.description} />)}
+    </div>
+  </section>
+
+  <section id="projects" class="section container" aria-labelledby="projects-heading">
+    <h2 id="projects-heading" class="section__title">Projects and initiatives</h2>
+    <p class="section__lead">
+      Independent tools, experiments, and content projects. Each card links to its own site when
+      available.
+    </p>
+    <div class="card-grid card-grid--projects">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            name={project.name}
+            url={project.url}
+            status={project.status}
+            category={project.category}
+            description={project.description}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section id="contact" class="section container" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="section__title">Want to talk?</h2>
+    <p class="section__lead">
+      If one of these projects is relevant to you, or if you are exploring similar problems,
+      feel free to reach out.
+    </p>
+    <TallyEmbed />
+  </section>
+</BaseLayout>

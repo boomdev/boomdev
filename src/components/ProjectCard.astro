@@ -1,0 +1,53 @@
+---
+import type { ProjectStatus } from '../data/projects';
+
+interface Props {
+  name: string;
+  url?: string;
+  status: ProjectStatus;
+  category: string;
+  description: string;
+}
+
+const { name, url, status, category, description } = Astro.props;
+
+const statusClassMap: Record<ProjectStatus, string> = {
+  Product: 'badge--product',
+  Project: 'badge--project',
+  Experiment: 'badge--experiment',
+  'Research note': 'badge--research',
+  'Content project': 'badge--content',
+  'AI project': 'badge--ai',
+  'Home base': 'badge--home',
+};
+
+const badgeClass = statusClassMap[status] ?? 'badge--home';
+---
+
+{
+  url ? (
+    <a
+      href={url}
+      class="card card--link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h3 class="card__title">{name}</h3>
+      <p class="card__description">{description}</p>
+      <div class="card__meta">
+        <span class:list={['badge', badgeClass]}>{status}</span>
+        <span class="tag">{category}</span>
+      </div>
+    </a>
+  ) : (
+    <article class="card card--coming-soon">
+      <h3 class="card__title">{name}</h3>
+      <p class="card__description">{description}</p>
+      <div class="card__meta">
+        <span class:list={['badge', badgeClass]}>{status}</span>
+        <span class="tag">{category}</span>
+        <span class="tag">Coming soon</span>
+      </div>
+    </article>
+  )
+}

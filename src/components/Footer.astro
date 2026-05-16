@@ -1,0 +1,29 @@
+---
+const year = new Date().getFullYear();
+
+const navItems = [
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#contact', label: 'Contact' },
+];
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <p class="site-footer__name">Boomdev</p>
+      <p class="site-footer__tagline">Independent software initiatives.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="site-footer__nav">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <p class="site-footer__copy">&copy; {year} Boomdev</p>
+  </div>
+</footer>
